@@ -28,7 +28,9 @@ export class GitIgnore extends React.Component<IGitIgnoreProps, IGitIgnoreState>
   }
 
   private renderGitIgnoreList() {
-    return this.state.gitIgnoreNames.map(name => (
+    const templateNames = this.state.gitIgnoreNames || []
+
+    return templateNames.map(name => (
       <Row key={name}>{name}</Row>
     ))
   }
